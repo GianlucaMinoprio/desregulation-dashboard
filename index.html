@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Desregulación Argentina · Agosto 2026</title>
+  <meta name="description" content="Dashboard de la desregulación implementada: 17.115 artículos modificados o eliminados. Fuente: Unidad de Evaluación de Impacto / Fede Sturzenegger." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg-grid" aria-hidden="true"></div>
+  <header class="top">
+    <div class="brand">
+      <span class="dot"></span>
+      <span class="brand-name">desregulation.com.ar</span>
+    </div>
+    <nav>
+      <a href="#sectores">Sectores</a>
+      <a href="#ejemplos">Destacados</a>
+      <a href="#fuente">Fuente</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <p class="eyebrow">Unidad de Evaluación de Impacto · Informe agosto 2026</p>
+      <h1>La desregulación, en números</h1>
+      <p class="lede">Acumulado desde diciembre 2023. Cada barra y cada ejemplo salen del informe oficial del mes.</p>
+    </section>
+
+    <section class="kpis" id="kpis" aria-label="Indicadores clave">
+      <!-- filled by JS -->
+    </section>
+
+    <section class="panel" id="ritmo">
+      <div class="panel-head">
+        <h2>Artículos acumulados · últimos 3 meses</h2>
+        <p class="muted">Jun → Ago 2026</p>
+      </div>
+      <div class="bars" id="bars"></div>
+    </section>
+
+    <section class="panel" id="sectores">
+      <div class="panel-head">
+        <h2>Normas de desregulación por sector</h2>
+        <p class="muted">770 normas en total</p>
+      </div>
+      <div class="sectors" id="sectors"></div>
+    </section>
+
+    <section class="panel" id="ejemplos">
+      <div class="panel-head">
+        <h2>Ejemplos destacados del mes</h2>
+        <p class="muted">Agosto 2026</p>
+      </div>
+      <ol class="examples" id="examples"></ol>
+    </section>
+
+    <section class="panel source" id="fuente">
+      <h2>Fuente</h2>
+      <p>
+        Datos del informe publicado por
+        <a href="https://x.com/fedesturze" target="_blank" rel="noopener">@fedesturze</a>
+        el 7 sep 2026:
+        <a id="source-link" href="https://x.com/fedesturze/status/2096922654028579217" target="_blank" rel="noopener">Informe de desregulación de Agosto</a>.
+        También en
+        <a href="https://www.argentina.gob.ar/desregulacion/desregulacion-en-numeros" target="_blank" rel="noopener">Desregulación en Números</a>.
+      </p>
+      <blockquote id="source-quote"></blockquote>
+      <p class="fine">Sitio ciudadano independiente. No es un canal oficial del Ministerio ni de la Nación.</p>
+    </section>
+  </main>
+
+  <footer>
+    <span>Hecho para que se vea lo que se desreguló.</span>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

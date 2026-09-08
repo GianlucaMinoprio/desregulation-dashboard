@@ -1,0 +1,144 @@
+{
+  "source": {
+    "author": "Fede Sturzenegger",
+    "username": "fedesturze",
+    "post_id": "2096922654028579217",
+    "url": "https://x.com/fedesturze/status/2096922654028579217",
+    "created_at": "2026-09-07T11:24:54.000Z",
+    "text": "Informe de desregulación de Agosto. 17.115 desregulaciones y sumando. VLLC!",
+    "unit": "Unidad de Evaluación de Impacto · Análisis de la desregulación implementada",
+    "official_portal": "https://www.argentina.gob.ar/desregulacion/desregulacion-en-numeros",
+    "official_pdf": "https://www.argentina.gob.ar/sites/default/files/2025/06/informe_analisis_de_la_desregulacion_implementada_agosto.pdf"
+  },
+  "as_of": "2026-08",
+  "totals": {
+    "normas_desregulacion": {
+      "value": 770,
+      "delta_month": 36
+    },
+    "normas_modificadas_o_eliminadas": {
+      "value": 2841,
+      "delta_month": 32
+    },
+    "articulos_modificados_o_eliminados": {
+      "value": 17115,
+      "delta_month": 267
+    }
+  },
+  "articulos_ultimos_3_meses": [
+    {
+      "month": "2026-06",
+      "label": "Junio",
+      "value": 16178,
+      "delta": null
+    },
+    {
+      "month": "2026-07",
+      "label": "Julio",
+      "value": 16848,
+      "delta": 670
+    },
+    {
+      "month": "2026-08",
+      "label": "Agosto",
+      "value": 17115,
+      "delta": 267
+    }
+  ],
+  "sectores": [
+    {
+      "name": "Agroindustria",
+      "normas": 125
+    },
+    {
+      "name": "Finanzas y Mercado de Capitales",
+      "normas": 120
+    },
+    {
+      "name": "Comercio Exterior",
+      "normas": 113
+    },
+    {
+      "name": "Transporte",
+      "normas": 101
+    },
+    {
+      "name": "Producción Nacional",
+      "normas": 100
+    },
+    {
+      "name": "Bienestar Ciudadano",
+      "normas": 65
+    },
+    {
+      "name": "Salud",
+      "normas": 42
+    },
+    {
+      "name": "Energía",
+      "normas": 32
+    },
+    {
+      "name": "Cultura, Turismo y Deporte",
+      "normas": 31
+    },
+    {
+      "name": "Empleo y Regulación Laboral",
+      "normas": 25
+    },
+    {
+      "name": "Sector Inmobiliario",
+      "normas": 16
+    }
+  ],
+  "ejemplos_destacados": [
+    {
+      "n": 1,
+      "norma": "Resolución General 5886/2026 – ARCA",
+      "titulo": "Exportaciones postales con declaración simplificada",
+      "detalle": "Procedimiento de declaración simplificada para exportaciones comerciales por correo; menos carga administrativa y envíos más rápidos."
+    },
+    {
+      "n": 2,
+      "norma": "Decreto 697/2026 – Código Alimentario Argentino",
+      "titulo": "Alimentos con certificación internacional sin trámite previo",
+      "detalle": "Reconocimiento de certificaciones y estándares internacionales; exime de incorporación previa al CAA y sus registros a alimentos, aditivos, ingredientes y envases."
+    },
+    {
+      "n": 3,
+      "norma": "Decreto 689/2026",
+      "titulo": "Bitrenes y camiones a gas con mayor longitud",
+      "detalle": "Actualiza pesos y dimensiones máximas; nuevas configuraciones y mayor longitud para unidades GNC, eléctricas e híbridas."
+    },
+    {
+      "n": 4,
+      "norma": "Disposición 1053/2026 – Prefectura Naval Argentina",
+      "titulo": "Una deuda ya no impide zarpar",
+      "detalle": "Deroga ordenanza previa; elimina prohibición automática de zarpe por falta de pago; permite declaraciones juradas en reemplazo de documentación."
+    },
+    {
+      "n": 5,
+      "norma": "Resolución General 1159/2026 – CNV",
+      "titulo": "Fideicomisos financieros con autorización automática",
+      "detalle": "Amplía régimen de autorización automática de oferta pública; elimina aprobación previa de la CNV."
+    },
+    {
+      "n": 6,
+      "norma": "Resolución 272/2026 – Secretaría de Industria y Comercio",
+      "titulo": "Importación de maquinaria usada simplificada",
+      "detalle": "Simplifica régimen de importación de líneas de producción usadas; consultas sin intermediación profesional y más casos admitidos."
+    },
+    {
+      "n": 7,
+      "norma": "Resolución 480/2026 – Secretaría de Educación",
+      "titulo": "Convalidación de títulos extranjeros con menos burocracia",
+      "detalle": "Elimina materias de Formación Nacional para convalidar estudios secundarios en el exterior; unifica el trámite en una sola plataforma."
+    },
+    {
+      "n": 8,
+      "norma": "Resolución 411/2026 – Ministerio de Justicia",
+      "titulo": "Menos oficinas en el registro automotor",
+      "detalle": "Reorganiza la red de Registros Seccionales; unificaciones y cierres operativos; suprime catorce oficinas."
+    }
+  ]
+}
