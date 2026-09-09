@@ -1,4 +1,4 @@
-# desregulation.com.ar
+# desregulaciones.com.ar
 
 Citizen dashboard of Argentina’s official monthly deregulation report (Unidad de Evaluación de Impacto).
 
