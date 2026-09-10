@@ -131,7 +131,7 @@
   }
 
   function proposalDetails(entry, { consultation = false } = {}) {
-    return `<details class="proposal-details"><summary>${consultation ? 'Qué presentar' : 'Cómo participar'} <span aria-hidden="true">+</span></summary>
+    return `<details class="proposal-details"><summary>${consultation ? 'Requisitos de la consulta' : 'Cómo participar'} <span aria-hidden="true">+</span></summary>
       <p class="proposal-reference">${escapeHtml(entry.reference)}</p>
       <p class="proposal-context">${escapeHtml(entry.description)}</p>
       <div class="proposal-next"><h4>${consultation ? 'Cómo se evalúa' : 'El próximo paso'}</h4><p>${escapeHtml(entry.next_step)}</p></div>

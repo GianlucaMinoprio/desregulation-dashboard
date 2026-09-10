@@ -347,21 +347,14 @@ th:first-child { text-align: left; }
 .upcoming-card h4 { margin: 0 0 7px; font-size: 13px; font-weight: 600; }
 .proposal-support { background: #f8f4e8; border-left: 3px solid var(--gold); padding: 16px; margin-block: 22px; }
 .proposal-actions { margin-top: auto; display: flex; flex-direction: column; align-items: flex-start; gap: 7px; }
-.participation-guide { margin-top: 30px; padding-top: 26px; border-top: 1px solid var(--line); }
-.participation-guide h3 { font-size: 22px; }
-.participation-guide ol { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 30px; padding-left: 22px; margin-block: 20px 24px; }
-.participation-guide li { padding-left: 3px; font-size: 14px; line-height: 1.7; }
-.participation-guide li strong { display: block; }
-.participation-guide > a { font-size: 13px; line-height: 1.6; }
 @media (max-width: 1000px) { nav { gap: 18px; } .header-inner { flex-wrap: wrap; justify-content: center; padding-block: 14px; gap: 5px 25px; } }
 @media (max-width: 700px) {
   .explorer-fields { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
   .explorer-fields .search-wrap { grid-column: 1 / -1; }
-  .upcoming-grid, .participation-guide ol { grid-template-columns: 1fr; }
+  .upcoming-grid { grid-template-columns: 1fr; }
   .upcoming-section { padding-block: 50px; }
   .upcoming-card { padding: 22px; }
   .upcoming-card h3 { font-size: 25px; }
-  .participation-guide ol { gap: 16px; }
   nav { max-width: none; justify-content: center; flex-wrap: wrap; gap: 0 18px; }
   .proposal-actions .button { gap: 12px; }
 }
@@ -477,7 +470,6 @@ th:first-child { text-align: left; }
 .proposal-context { color: var(--muted); }
 .participation-section { padding-block: 32px; }
 .participation-section > .container { display: grid; grid-template-columns: 1fr 1fr; column-gap: 40px; align-items: center; }
-.participation-section .participation-guide { grid-column: 1 / -1; }
 .participation-intro { max-width: 720px; margin-bottom: 28px; }
 .participation-intro h2 { font-size: clamp(31px, 3.4vw, 40px); }
 .participation-intro > p:last-child { margin-top: 14px; color: var(--muted); font-size: 15px; line-height: 1.7; max-width: 58ch; }
@@ -525,9 +517,6 @@ th:first-child { text-align: left; }
 @media (max-width: 720px) { .ai-providers { justify-content: center; } }
 .participation-grid { gap: 30px; }
 .participation-action .button { margin-top: 0; }
-.participation-guide { margin-top: 24px; padding-top: 0; }
-.participation-guide > summary { padding-inline: 0; }
-.participation-guide ol { margin-top: 12px; }
 .source-section { padding-block: 16px; }
 .source-details > summary { padding: 12px 0; }
 .source-details > summary h2 { font-size: 24px; }
@@ -617,7 +606,6 @@ nav a[aria-current="page"] { text-decoration: underline; text-decoration-color: 
   .participation-card > .category, .participation-card > p:not(.category), .participation-card .participation-action small { min-height: 0; }
   .participation-card .participation-action { text-align: center; }
   .participation-card .button { max-width: 100%; }
-  .participation-guide > summary { justify-content: center; }
   .metric-definitions dl { grid-template-columns: 1fr; gap: 18px; }
   .source-details > summary { justify-content: center; }
   .source-intro { text-align: center; margin-inline: auto; }
@@ -727,14 +715,12 @@ nav a[aria-current="page"] { text-decoration: underline; text-decoration-color: 
           <article class="participation-card" id="reportar-norma" aria-labelledby="report-channel-title">
             <p class="category">Normas nacionales, provinciales o municipales</p>
             <h3 id="report-channel-title">Reportá una traba</h3>
-            <p>Contá qué regla dificulta trabajar, producir o comerciar y qué cambiarías para hacerlo más simple.</p>
+            <p>Identificá la norma, contá cómo te afecta y proponé qué cambiarías. Podés sumar documentación que respalde tu caso.</p>
             <div class="participation-action"><a class="button button-navy" href="https://www.argentina.gob.ar/formularios/reportar-normativa" target="_blank" rel="noopener">Ir al formulario <span aria-hidden="true">↗</span><span class="visually-hidden">(nueva pestaña)</span></a><small>Argentina.gob.ar · Reportá una norma</small></div>
             <div data-ai-channel="norma"></div>
-            <details class="proposal-details"><summary>Qué presentar <span aria-hidden="true">+</span></summary><p class="proposal-reference">El formulario pide identificar la norma, explicar el problema y proponer una solución. Podés adjuntar documentación que ayude a entender tu caso.</p></details>
           </article>
 
         </div>
-        <details class="participation-guide"><summary>Cómo preparar tu propuesta <span aria-hidden="true">+</span></summary><ol><li><strong>Ubicá la regla.</strong> Identificá el artículo, trámite o requisito.</li><li><strong>Contá tu experiencia.</strong> Sumá pasos, plazos o costos que puedas documentar.</li><li><strong>Proponé una alternativa.</strong> Explicá qué simplificarías y presentalo por el canal oficial.</li></ol><a class="text-action" href="https://www.argentina.gob.ar/cnv/consultas-publicas" target="_blank" rel="noopener">También podés consultar la agenda participativa de la CNV <span aria-hidden="true">↗</span><span class="visually-hidden">(nueva pestaña)</span></a></details>
       </div>
     </section>
     <section class="source-section" id="fuente" aria-labelledby="source-title">
@@ -744,6 +730,7 @@ nav a[aria-current="page"] { text-decoration: underline; text-decoration-color: 
         <div class="source-links compact-source-links">
           <a id="pdf-link" href="https://www.argentina.gob.ar/sites/default/files/2025/06/informe_analisis_de_la_desregulacion_implementada_agosto.pdf" target="_blank" rel="noopener"><span><strong>Informe oficial · Agosto 2026</strong><small>PDF · Se abre en una pestaña nueva</small></span><span class="source-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 18 18 6M6 6h12v12"/></svg></span></a>
           <a href="https://www.argentina.gob.ar/desregulacion/desregulacion-en-numeros" target="_blank" rel="noopener"><span><strong>Desregulación en Números</strong><small>Portal oficial · Informes y metodología · Nueva pestaña</small></span><span class="source-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 18 18 6M6 6h12v12"/></svg></span></a>
+          <a href="https://www.argentina.gob.ar/cnv/consultas-publicas" target="_blank" rel="noopener"><span><strong>Consultas públicas de la CNV</strong><small>Otras oportunidades para participar · Nueva pestaña</small></span><span class="source-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 18 18 6M6 6h12v12"/></svg></span></a>
           <a id="download-data" href="data/august-2026.json" download="desregulacion-agosto-2026.json"><span><strong>Descargar cifras de agosto de 2026</strong><small>JSON · Cifras y medidas del informe mensual</small></span><span class="source-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 4v14m-6-6 6 6 6-6M5 21h14"/></svg></span></a>
         </div>
         <div class="data-downloads"><a id="download-history" href="data/history.json" download="desregulacion-historia.json">Serie mensual · JSON ↓</a><a id="download-citizen" href="data/citizen.json" download="desregulacion-cambios-desde-2023.json">Explicaciones · JSON ↓</a><a href="#archivo" data-archive-link>Archivo y descarga del índice →</a></div>
@@ -1346,7 +1333,7 @@ nav a[aria-current="page"] { text-decoration: underline; text-decoration-color: 
   }
 
   function proposalDetails(entry, { consultation = false } = {}) {
-    return `<details class="proposal-details"><summary>${consultation ? 'Qué presentar' : 'Cómo participar'} <span aria-hidden="true">+</span></summary>
+    return `<details class="proposal-details"><summary>${consultation ? 'Requisitos de la consulta' : 'Cómo participar'} <span aria-hidden="true">+</span></summary>
       <p class="proposal-reference">${escapeHtml(entry.reference)}</p>
       <p class="proposal-context">${escapeHtml(entry.description)}</p>
       <div class="proposal-next"><h4>${consultation ? 'Cómo se evalúa' : 'El próximo paso'}</h4><p>${escapeHtml(entry.next_step)}</p></div>
