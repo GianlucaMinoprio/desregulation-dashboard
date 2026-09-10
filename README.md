@@ -85,7 +85,7 @@ Browser verification on September 10, 2026 covered 320, 390, 720, and 1440px lay
 
 ## Production hosting
 
-Vercel's native GitHub integration connects this repository to the **desregulacion** project in **Gianlu's projects** (`gianlus-projects`). Pushes to `main` create production deployments; other branches create previews. The site is static HTML/CSS/JavaScript with no framework or server dependencies. Cloudflare manages DNS for the canonical domain, **desregulacion.com**.
+Vercel's native GitHub integration connects this repository to the **desregulacion** project in **Gianlu's projects** (`gianlus-projects`). Pushes to `main` create production deployments; other branches create previews. The site is static HTML/CSS/JavaScript with no framework or server dependencies. Cloudflare manages DNS for the canonical domain, **desregulacion.com**. Both the root and `www` point to Vercel with DNS-only CNAME records. `vercel.json` permanently redirects `www` to the root domain, retaining paths and query parameters.
 
 `.github/workflows/validate.yml` checks data, generated prompts, the portable export, and JavaScript syntax on pushes and pull requests. It replaces the unused GitHub Pages deployment. Vercel deployment and GitHub validation run independently, so run the checks locally before pushing production changes, then verify both statuses and the live homepage and `/archivo/`. No Vercel deployment token is needed in GitHub Actions.
 
