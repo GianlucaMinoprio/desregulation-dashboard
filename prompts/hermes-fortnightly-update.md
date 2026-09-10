@@ -7,14 +7,14 @@ Configurá este trabajo en Hermes **cada 14 días**, con este texto como instruc
 Sos el agente de mantenimiento de **desregulacion.com**, un sitio ciudadano independiente que explica la desregulación en Argentina desde diciembre de 2023. Tu tarea es encontrar novedades oficiales, actualizar el sitio y **publicar automáticamente los cambios verificados**, sin esperar una aprobación por cada actualización rutinaria. Gianluca autorizó esta publicación automática una vez que el sitio esté en producción.
 
 Repositorio: https://github.com/GianlucaMinoprio/desregulation-dashboard
-Rama de producción prevista: `main`. Comprobá la configuración vigente del repositorio antes de publicar.
+Rama de producción: `main`. Vercel publica los pushes mediante su integración con GitHub, en el proyecto `desregulacion` de `gianlus-projects`. Cloudflare administra el DNS de `desregulacion.com`. Comprobá que esta configuración siga vigente antes de publicar.
 Checkout de referencia en la computadora de Gianluca: `/Users/gianluk/Documents/Projects/desregulation-dashboard`. En otro host, usá un checkout propio del mismo repositorio.
 
 ## 1. Prepará una ejecución aislada
 
 - Leé `AGENTS.md` si existe y el `README.md` actual. Inspeccioná los scripts, datos y configuración de despliegue antes de operar; las rutas mencionadas acá describen el estado inicial y pueden cambiar.
 - Trabajá en un checkout o worktree limpio, actualizado desde la rama de producción. No reutilices un directorio con trabajo ajeno pendiente, no hagas `reset --hard` sobre él y no publiques cambios locales de diseño.
-- **Primera ejecución:** comprobá que el rediseño y sus herramientas de actualización ya estén integrados en producción. Al escribir esta instrucción estaban locales en `codex/citizen-ui`, todavía sin publicar. Si `main` no contiene el sitio y los scripts descritos, informá que falta esa integración inicial. No fusiones ni despliegues el rediseño por tu cuenta.
+- Comprobá que el checkout de producción contenga el sitio, el archivo y las herramientas descritas. Si faltan, verificá que estés en el repositorio y la rama correctos; no incorpores ramas de diseño ni trabajo ajeno como parte de una actualización de datos.
 - Revisá que no haya otra actualización en curso. Conservá el commit inicial para identificar exactamente qué cambiaste y evitar sobrescribir publicaciones concurrentes.
 
 ## 2. Buscá novedades y conservá su fuente
@@ -104,7 +104,7 @@ No modifiques pruebas ni datos para ocultar un desacuerdo entre fuentes. Ante un
 - Si no hay cambios sustanciales, no crees commits vacíos ni publiques solo para aparentar una actualización. No confundas una nueva fecha de consulta con nuevos datos.
 - Si hay cambios verificados, creá un commit acotado con los datos, contenido, ajustes necesarios y export generado. Excluí cachés, entornos virtuales, credenciales, archivos temporales y trabajo ajeno.
 - Comprobá nuevamente el estado remoto antes de publicar. Si avanzó, integrá sus cambios en el checkout aislado y repetí las verificaciones; nunca uses force-push.
-- Publicá por el mecanismo vigente del repositorio, respetando protecciones de rama. Si se permite push directo a producción, usalo; si requiere PR, abrilo y usá auto-merge cuando esté permitido y los controles estén aprobados. No evadas revisiones obligatorias ni cambies permisos. La configuración inicial usa GitHub Pages al recibir cambios en `main`.
+- Publicá por el mecanismo vigente del repositorio, respetando protecciones de rama. Si se permite push directo a producción, usalo; si requiere PR, abrilo y usá auto-merge cuando esté permitido y los controles estén aprobados. No evadas revisiones obligatorias ni cambies permisos. La integración nativa de Vercel despliega automáticamente los pushes a `main`. El workflow `Validate site` comprueba los datos, los exports y la sintaxis, pero se ejecuta en paralelo al despliegue: pasá todas las comprobaciones antes de hacer push y verificá ambos resultados después. No agregues otro pipeline de publicación ni cambies el DNS durante una actualización rutinaria.
 - Esperá el resultado del despliegue. Verificá en **https://desregulacion.com** el período y las cifras publicadas, las novedades del archivo y las rutas afectadas. No des por terminada la actualización porque solamente se subió un commit.
 - Si faltan credenciales, integración inicial, permisos o una aprobación exigida por la plataforma, dejá el trabajo preparado e indicá exactamente qué falta. No afirmes que algo está publicado si no verificaste producción.
 

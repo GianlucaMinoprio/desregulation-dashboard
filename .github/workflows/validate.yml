@@ -1,0 +1,36 @@
+name: Validate site
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: validate-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Validate source data and generated exports
+        run: |
+          python3 scripts/check_data.py
+          python3 scripts/build_prompts.py --check
+          python3 scripts/build_single.py --check
+      - name: Check JavaScript syntax
+        run: |
+          for script in app.js archive.js history.js site.js navigation.js explorer.js participation-ai.js; do
+            node --check "$script"
+          done
+      - name: Check whitespace
+        run: git diff --check
