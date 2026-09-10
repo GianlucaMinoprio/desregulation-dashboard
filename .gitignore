@@ -1,3 +1,7 @@
 assets/*.pdf
 assets/dashboard-preview.png
 assets/informe-ago-*.jpg
+.venv/
+__pycache__/
+*.pyc
+.DS_Store

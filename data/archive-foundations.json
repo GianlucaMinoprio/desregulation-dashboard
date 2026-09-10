@@ -1,0 +1,24 @@
+[
+  {
+    "id": "dnu-70-2023",
+    "kind": "norma",
+    "date": "2023-12-21",
+    "date_precision": "day",
+    "title": "DNU 70/2023 · Bases para la reconstrucción de la economía argentina",
+    "description": "Norma de referencia del inicio del proceso. Abarca cambios en múltiples sectores. El texto original documenta lo dispuesto en esa fecha; para conocer el estado de cada artículo, consultá la normativa actualizada.",
+    "norma": "Decreto de Necesidad y Urgencia 70/2023",
+    "url": "https://www.argentina.gob.ar/normativa/nacional/norma-395521/texto",
+    "source": "Normativa nacional · Texto original"
+  },
+  {
+    "id": "ley-27742-2024",
+    "kind": "norma",
+    "date": "2024-07-08",
+    "date_precision": "day",
+    "title": "Ley 27.742 · Ley de Bases y Puntos de Partida para la Libertad de los Argentinos",
+    "description": "Ley de referencia del proceso de reforma, con disposiciones en distintas áreas. El archivo enlaza el texto legal; sus artículos y efectos deben consultarse individualmente.",
+    "norma": "Ley 27.742",
+    "url": "https://www.argentina.gob.ar/normativa/nacional/ley-27742-401266/texto",
+    "source": "Normativa nacional · Texto original"
+  }
+]

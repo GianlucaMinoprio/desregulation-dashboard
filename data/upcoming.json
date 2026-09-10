@@ -1,0 +1,36 @@
+{
+  "reviewed_at": "2026-09-10",
+  "entries": [
+    {
+      "id": "hojarasca",
+      "category": "Leyes y trámites",
+      "title": "Ley Hojarasca: revisar legislación obsoleta",
+      "status": "Pendiente en el Senado",
+      "status_kind": "legislativo",
+      "reference": "CD-1/26 · Orden del Día 135/26",
+      "description": "Propone derogar legislación considerada obsoleta. Diputados dio media sanción el 20 de mayo; el Senado registra dictámenes y mantiene la orden del día pendiente.",
+      "next_step": "Tratamiento en el Senado. El último movimiento de comisión registrado es del 26 de agosto de 2026.",
+      "support": "Leé el articulado y, si lo acompañás, escribí por los canales oficiales a tus senadores. Explicá qué norma te afecta, aportá un ejemplo concreto y pedí su tratamiento.",
+      "source_url": "https://www.senado.gob.ar/parlamentario/comisiones/verExp/1.26/CD/PL",
+      "source_label": "Ver expediente y texto",
+      "action_url": "https://www.senado.gob.ar/senadores/listados/agrupados-por-provincia",
+      "action_label": "Encontrá a tus senadores"
+    },
+    {
+      "id": "igj",
+      "category": "Empresas y organizaciones",
+      "title": "Proponé reglas más simples",
+      "status": "Consulta abierta",
+      "status_kind": "consulta",
+      "reference": "Norma a revisar: Resolución General 15/2024 de la Inspección General de Justicia. Convocatoria: Resolución General 2/2026.",
+      "description": "Proponé cómo simplificar los trámites de empresas y organizaciones registradas en la Inspección General de Justicia (IGJ).",
+      "next_step": "El organismo revisará las propuestas y evaluará qué cambios incorporar a sus reglas.",
+      "support": "Prepará un PDF o Word con el trámite que querés simplificar, el problema que te genera y tu propuesta. Indicá qué artículos de la norma cambiarías. Si querés proponer cambios sobre temas distintos, enviá un formulario por tema.",
+      "source_url": "https://www.argentina.gob.ar/justicia/igj/consulta-publica",
+      "source_label": "Leer la convocatoria",
+      "action_url": "https://www.argentina.gob.ar/formularios/consulta-publica-modificacion-de-la-rg-igj-152024",
+      "action_label": "Abrir formulario",
+      "deadline": "2026-09-28"
+    }
+  ]
+}

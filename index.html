@@ -1,83 +1,138 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-AR">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Desregulación Argentina · Agosto 2026</title>
-  <meta name="description" content="Dashboard de la desregulación implementada: 17.115 artículos modificados o eliminados. Fuente: Unidad de Evaluación de Impacto / Fede Sturzenegger." />
+  <meta name="theme-color" content="#272e50" />
+  <title>Desregulación · Qué cambia para vos</title>
+  <link rel="canonical" href="https://desregulacion.com/" />
+  <meta name="description" content="Entendé qué cambió con la desregulación en Argentina, a quién le sirve y cómo participar. Historia desde diciembre de 2023, archivo de fuentes y cambios explicados en simple." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="bg-grid" aria-hidden="true"></div>
-  <header class="top">
-    <div class="brand">
-      <span class="dot"></span>
-      <span class="brand-name">desregulaciones.com.ar</span>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#inicio" aria-label="Desregulación, inicio"><img class="brand-mark" src="assets/desregulacion-emblem-web.png" width="52" height="72" alt="" /><span>desregulacion<span class="brand-domain">.com</span></span></a>
+      <nav aria-label="Navegación principal"><a href="#ejemplos">Qué cambia</a><a href="#numeros">En números</a><a href="#participar">Participá</a><a href="archivo/" data-archive-link>Archivo</a></nav>
     </div>
-    <nav>
-      <a href="#sectores">Sectores</a>
-      <a href="#ejemplos">Destacados</a>
-      <a href="#fuente">Fuente</a>
-    </nav>
   </header>
-
-  <main>
-    <section class="hero">
-      <p class="eyebrow">Unidad de Evaluación de Impacto · Informe agosto 2026</p>
-      <h1>La desregulación, en números</h1>
-      <p class="lede">Acumulado desde diciembre 2023. Cada barra y cada ejemplo salen del informe oficial del mes.</p>
-    </section>
-
-    <section class="kpis" id="kpis" aria-label="Indicadores clave">
-      <!-- filled by JS -->
-    </section>
-
-    <section class="panel" id="ritmo">
-      <div class="panel-head">
-        <h2>Artículos acumulados · últimos 3 meses</h2>
-        <p class="muted">Jun → Ago 2026</p>
+  <main id="contenido" tabindex="-1">
+    <section class="hero" id="inicio" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="little-line" aria-hidden="true"></span> Argentina, en simple</p>
+          <h1 id="hero-title">Menos vueltas.<br><span>Más posibilidades.</span></h1>
+          <p class="hero-description">Qué cambia con la desregulación, a quién le sirve y cómo puede impactar en tu día a día.</p>
+          <a class="button button-gold" href="#ejemplos">Explorá los cambios <span aria-hidden="true">↓</span></a>
+          <p class="hero-footnote">Desde diciembre de 2023 · Datos a agosto de 2026</p>
+        </div>
       </div>
-      <div class="bars" id="bars"></div>
     </section>
-
-    <section class="panel" id="sectores">
-      <div class="panel-head">
-        <h2>Normas de desregulación por sector</h2>
-        <p class="muted">770 normas en total</p>
+    <div class="container">
+      <div id="load-status" class="load-status" role="status" hidden><p>Cargando los datos del informe…</p></div>
+      <noscript><div class="notice">Para explorar los cambios, activá JavaScript. También podés <a href="https://www.argentina.gob.ar/desregulacion/desregulacion-en-numeros">leer el informe en el sitio oficial</a>.</div></noscript>
+      <section class="overview" aria-labelledby="overview-title">
+        <div class="section-overline"><h2 id="overview-title">El alcance de los cambios</h2><span>Acumulado a agosto de 2026</span></div>
+        <div class="kpis" id="kpis" aria-busy="true"></div>
+        <p class="data-note"><span aria-hidden="true">↳</span> <a href="#metodologia">Cómo leer los datos</a></p>
+      </section>
+      <section class="changes section-space" id="ejemplos" aria-labelledby="changes-title">
+        <div class="section-heading"><div><p class="eyebrow">01 / De cerca</p><h2 id="changes-title">¿Qué cambia para vos?</h2></div><p>Cambios para tu vida, tu trabajo o tu próximo emprendimiento.</p></div>
+        <div id="explorer-status" class="load-status" role="status"><p>Cargando los cambios…</p></div>
+        <div class="explorer-controls" id="explorer-controls" hidden>
+          <div class="filters" role="group" aria-label="Filtrar cambios por interés">
+            <button type="button" class="filter" data-filter="todos" aria-pressed="true" aria-controls="examples">Todos</button>
+            <button type="button" class="filter" data-filter="cotidiana" aria-pressed="false" aria-controls="examples">Vida cotidiana</button>
+            <button type="button" class="filter" data-filter="producir" aria-pressed="false" aria-controls="examples">Producir, vender y emprender</button>
+            <button type="button" class="filter" data-filter="transporte" aria-pressed="false" aria-controls="examples">Transportar</button>
+            <button type="button" class="filter" data-filter="invertir" aria-pressed="false" aria-controls="examples">Invertir</button>
+          </div>
+          <div class="search-wrap"><label for="search">Buscá un tema o una norma</label><div class="search-field"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><input type="search" id="search" placeholder="Ej.: alquileres, marcas, exportar" autocomplete="off" /></div></div>
+          <details class="advanced-filters" id="more-filters"><summary>Más filtros <span aria-hidden="true">+</span></summary><div class="explorer-fields"><div class="explorer-select"><label for="change-year">Año del cambio</label><select id="change-year"><option value="todos">Todos desde 2023</option><option value="2026">2026</option><option value="2025">2025</option><option value="2024">2024</option><option value="2023">2023</option></select></div>
+          <div class="explorer-select"><label for="change-sort">Orden</label><select id="change-sort"><option value="destacados">Para empezar</option><option value="recientes">Más recientes</option><option value="antiguos">Desde el comienzo</option></select></div></div></details>
+        </div>
+        <div class="results-meta"><p id="result-count" role="status" aria-live="polite" aria-atomic="true"></p></div>
+        <div class="examples" id="examples" aria-busy="true"></div>
+        <div class="empty-state" id="empty-state" hidden><h3>No encontramos resultados con esos filtros</h3><p>Probá otro tema, elegí otro año o volvé a ver todo el período.</p><button class="button button-navy" id="reset-search" type="button">Ver todos los cambios</button></div>
+        <div class="more-row"><button class="button button-outline" type="button" id="show-more" hidden>Ver más cambios <span aria-hidden="true">↓</span></button><a class="text-action" href="archivo/" data-archive-link>Ver todas las publicaciones <span aria-hidden="true">→</span></a></div>
+      </section>
+    </div>
+    <section class="numbers-section" id="numeros" aria-labelledby="numbers-title">
+      <div class="container">
+        <div class="section-heading"><div><p class="eyebrow">02 / El panorama</p><h2 id="numbers-title">Los cambios, en números.</h2></div><p>Cuánto se modificó y en qué sectores.<br>Una manera de dimensionar el proceso.</p></div>
+        <section class="history-panel" id="historial" aria-labelledby="history-title">
+          <div class="history-heading"><div><h3 id="history-title">La evolución desde diciembre de 2023</h3><p>Serie mensual oficial · Totales acumulados</p></div><a href="archivo/" data-archive-link class="text-action">Explorar documentos <span aria-hidden="true">↓</span></a></div>
+          <div class="history-controls" role="group" aria-label="Elegir indicador histórico">
+            <button type="button" class="filter" data-metric="articulos" aria-pressed="true" aria-controls="history-chart">Artículos alcanzados</button>
+            <button type="button" class="filter" data-metric="normativas" aria-pressed="false" aria-controls="history-chart">Normas alcanzadas</button>
+            <button type="button" class="filter" data-metric="normas" aria-pressed="false" aria-controls="history-chart">Normas de desregulación</button>
+          </div>
+          <p id="history-status" role="status" aria-live="polite" hidden>Cargando la serie histórica…</p>
+          <div id="history-chart" class="history-chart"></div>
+          <div class="history-scrubber" id="history-scrubber" hidden><div class="history-slider-heading"><label for="history-month">Elegí un mes</label></div><div class="history-slider-row"><button id="history-prev" class="history-step" type="button" aria-label="Ver mes anterior"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 6-6 6 6 6"/></svg></button><input id="history-month" type="range" min="0" max="32" step="1" value="32" /><button id="history-next" class="history-step" type="button" aria-label="Ver mes siguiente"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m10 6 6 6-6 6"/></svg></button></div><p class="visually-hidden" id="history-selection-live" role="status" aria-live="polite"></p></div>
+          <details class="history-reconciliation" id="history-reconciliation" hidden></details>
+          <details class="data-table"><summary>Ver todos los meses en una tabla <span aria-hidden="true">+</span></summary><div id="history-table" class="table-scroll" role="region" aria-label="Tabla mensual, desplazable horizontalmente" tabindex="0"></div></details>
+          <div class="history-sources"><a href="#fuente">Fuente y descarga de datos <span aria-hidden="true">↓</span></a></div>
+        </section>
+          <section class="sector-panel" id="sectores" aria-labelledby="sector-title"><div class="panel-heading"><h3 id="sector-title">¿Dónde se desreguló más?</h3><p>Normas de desregulación por sector · Agosto de 2026</p></div><ol class="sectors" id="sectors" aria-busy="true"></ol><div class="sector-more"><button id="show-sectors" class="text-action" type="button" aria-expanded="false" aria-controls="sectors" hidden>Ver los 11 sectores <span aria-hidden="true">+</span></button></div></section>
       </div>
-      <div class="sectors" id="sectors"></div>
     </section>
+    <section class="upcoming-section" id="proximos" aria-labelledby="upcoming-title">
+      <div class="container">
+        <div class="section-heading"><div><p class="eyebrow">03 / Lo que sigue</p><h2 id="upcoming-title">¿Qué se viene?</h2></div><p>Proyectos en discusión y consultas abiertas para participar.</p></div>
+        <p class="upcoming-reviewed" id="upcoming-reviewed"></p>
+        <div id="upcoming-status" class="load-status" role="status"><p>Cargando las propuestas…</p></div>
+        <div class="upcoming-grid" id="upcoming-cards">
+          <article class="upcoming-card" id="igj-channel" aria-labelledby="igj-channel-title">
+            <p class="category">Empresas y organizaciones</p><p class="proposal-deadline"><span>Plazo para presentar tu propuesta</span><strong>Hasta el <time datetime="2026-09-28">28 de septiembre de 2026</time></strong></p><h3 id="igj-channel-title">Proponé reglas más simples</h3><p>Proponé cómo simplificar los trámites de empresas y organizaciones registradas en la Inspección General de Justicia (IGJ).</p>
+            <div class="participation-action"><a class="button button-navy" href="https://www.argentina.gob.ar/formularios/consulta-publica-modificacion-de-la-rg-igj-152024" target="_blank" rel="noopener">Abrir formulario <span aria-hidden="true">↗</span><span class="visually-hidden">(nueva pestaña)</span></a><small>Argentina.gob.ar · Consulta pública de la IGJ</small></div>
+            <div data-ai-channel="igj"></div>
+          </article>
+        </div>
 
-    <section class="panel" id="ejemplos">
-      <div class="panel-head">
-        <h2>Ejemplos destacados del mes</h2>
-        <p class="muted">Agosto 2026</p>
       </div>
-      <ol class="examples" id="examples"></ol>
     </section>
+    <section class="participation-section" id="participar" aria-labelledby="participation-title">
+      <div class="container">
+        <div class="participation-intro"><p class="eyebrow">Vos también podés proponer un cambio</p><h2 id="participation-title">¿Una norma te complica<br>la vida o el trabajo?</h2><p>Tu experiencia puede ayudar a simplificar las reglas. Contá qué cambiarías y por qué.</p></div>
+        <div class="participation-channels">
+          <article class="participation-card" id="reportar-norma" aria-labelledby="report-channel-title">
+            <p class="category">Normas nacionales, provinciales o municipales</p>
+            <h3 id="report-channel-title">Reportá una traba</h3>
+            <p>Contá qué regla dificulta trabajar, producir o comerciar y qué cambiarías para hacerlo más simple.</p>
+            <div class="participation-action"><a class="button button-navy" href="https://www.argentina.gob.ar/formularios/reportar-normativa" target="_blank" rel="noopener">Ir al formulario <span aria-hidden="true">↗</span><span class="visually-hidden">(nueva pestaña)</span></a><small>Argentina.gob.ar · Reportá una norma</small></div>
+            <div data-ai-channel="norma"></div>
+            <details class="proposal-details"><summary>Qué presentar <span aria-hidden="true">+</span></summary><p class="proposal-reference">El formulario pide identificar la norma, explicar el problema y proponer una solución. Podés adjuntar documentación que ayude a entender tu caso.</p></details>
+          </article>
 
-    <section class="panel source" id="fuente">
-      <h2>Fuente</h2>
-      <p>
-        Datos del informe publicado por
-        <a href="https://x.com/fedesturze" target="_blank" rel="noopener">@fedesturze</a>
-        el 7 sep 2026:
-        <a id="source-link" href="https://x.com/fedesturze/status/2096922654028579217" target="_blank" rel="noopener">Informe de desregulación de Agosto</a>.
-        También en
-        <a href="https://www.argentina.gob.ar/desregulacion/desregulacion-en-numeros" target="_blank" rel="noopener">Desregulación en Números</a>.
-      </p>
-      <blockquote id="source-quote"></blockquote>
-      <p class="fine">Sitio ciudadano independiente. No es un canal oficial del Ministerio ni de la Nación.</p>
+        </div>
+        <details class="participation-guide"><summary>Cómo preparar tu propuesta <span aria-hidden="true">+</span></summary><ol><li><strong>Ubicá la regla.</strong> Identificá el artículo, trámite o requisito.</li><li><strong>Contá tu experiencia.</strong> Sumá pasos, plazos o costos que puedas documentar.</li><li><strong>Proponé una alternativa.</strong> Explicá qué simplificarías y presentalo por el canal oficial.</li></ol><a class="text-action" href="https://www.argentina.gob.ar/cnv/consultas-publicas" target="_blank" rel="noopener">También podés consultar la agenda participativa de la CNV <span aria-hidden="true">↗</span><span class="visually-hidden">(nueva pestaña)</span></a></details>
+      </div>
+    </section>
+    <section class="source-section" id="fuente" aria-labelledby="source-title">
+      <div class="container"><details id="source-details" class="source-details"><summary><h2 id="source-title">Fuentes y datos</h2><span aria-hidden="true">+</span></summary>
+        <p class="source-intro">Publicaciones oficiales desde diciembre de 2023, explicadas en lenguaje cotidiano por este sitio.</p>
+        <details id="metodologia" class="metric-definitions"><summary>Cómo leer las cifras <span aria-hidden="true">+</span></summary><dl><div><dt>Artículos alcanzados</dt><dd>Artículos modificados o eliminados por las medidas de desregulación.</dd></div><div><dt>Normas alcanzadas</dt><dd>Normas modificadas o eliminadas. Una norma puede contener varios artículos.</dd></div><div><dt>Normas de desregulación</dt><dd>Medidas publicadas que introducen cambios. Una medida puede alcanzar varias normas.</dd></div></dl><p>Las fechas indican la publicación o edición de la fuente. Cada explicación enlaza al texto oficial para revisar su alcance.</p></details>
+        <div class="source-links compact-source-links">
+          <a id="pdf-link" href="https://www.argentina.gob.ar/sites/default/files/2025/06/informe_analisis_de_la_desregulacion_implementada_agosto.pdf" target="_blank" rel="noopener"><span><strong>Informe oficial · Agosto 2026</strong><small>PDF · Se abre en una pestaña nueva</small></span><span class="source-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 18 18 6M6 6h12v12"/></svg></span></a>
+          <a href="https://www.argentina.gob.ar/desregulacion/desregulacion-en-numeros" target="_blank" rel="noopener"><span><strong>Desregulación en Números</strong><small>Portal oficial · Informes y metodología · Nueva pestaña</small></span><span class="source-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 18 18 6M6 6h12v12"/></svg></span></a>
+          <a id="download-data" href="data/august-2026.json" download="desregulacion-agosto-2026.json"><span><strong>Descargar cifras de agosto de 2026</strong><small>JSON · Cifras y medidas del informe mensual</small></span><span class="source-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 4v14m-6-6 6 6 6-6M5 21h14"/></svg></span></a>
+        </div>
+        <div class="data-downloads"><a id="download-history" href="data/history.json" download="desregulacion-historia.json">Serie mensual · JSON ↓</a><a id="download-citizen" href="data/citizen.json" download="desregulacion-cambios-desde-2023.json">Explicaciones · JSON ↓</a><a href="archivo/" data-archive-link>Archivo y descarga del índice →</a></div>
+      </details></div>
     </section>
   </main>
-
-  <footer>
-    <span>Hecho para que se vea lo que se desreguló.</span>
-  </footer>
-
+  <footer class="container footer"><a class="brand" href="#inicio"><img class="brand-mark" src="assets/desregulacion-emblem-web.png" width="52" height="72" alt="" /><span>desregulacion<span class="brand-domain">.com</span></span></a><p>Un sitio ciudadano independiente.<br>No es un canal oficial del Gobierno.</p><a href="#inicio" class="back-top">Volver arriba <span aria-hidden="true">↑</span></a></footer>
+  <script src="site.js"></script>
   <script src="app.js"></script>
+  <script src="history.js"></script>
+  <script src="participation-ai.js"></script>
+  <script src="explorer.js"></script>
+  <script src="navigation.js"></script>
 </body>
 </html>

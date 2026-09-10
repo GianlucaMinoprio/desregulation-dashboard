@@ -30,7 +30,7 @@
       "month": "2026-06",
       "label": "Junio",
       "value": 16178,
-      "delta": null
+      "delta": 671
     },
     {
       "month": "2026-07",
@@ -140,5 +140,128 @@
       "titulo": "Menos oficinas en el registro automotor",
       "detalle": "Reorganiza la red de Registros Seccionales; unificaciones y cierres operativos; suprime catorce oficinas."
     }
-  ]
+  ],
+  "lectura_ciudadana": {
+    "criterio": "Los filtros agrupan por interés ciudadano. Los destacados de agosto se integran en el explorador histórico del sitio.",
+    "alcance": "Explicaciones en lenguaje cotidiano de los cambios descriptos en el informe, con sus fuentes.",
+    "orden_destacados": [
+      1,
+      7,
+      2,
+      3,
+      6,
+      4,
+      5,
+      8
+    ],
+    "ejemplos": {
+      "1": {
+        "titulo": "Vender al exterior con menos papeles",
+        "categoria": "Envíos por correo",
+        "icono": "package",
+        "intereses": [
+          "producir"
+        ],
+        "resumen": "Una declaración simplificada para las exportaciones comerciales que se envían por correo.",
+        "beneficio": "Puede facilitar que un pequeño negocio llegue a clientes de otros países.",
+        "antes": "El informe identifica cargas administrativas en la declaración de exportaciones postales.",
+        "ahora": "Se aprueba un procedimiento de declaración simplificada para esos envíos.",
+        "personas": "Emprendedores y empresas que exportan productos por vía postal."
+      },
+      "7": {
+        "titulo": "Convalidar tu secundario con menos pasos",
+        "categoria": "Estudios del exterior",
+        "icono": "book",
+        "intereses": [
+          "cotidiana"
+        ],
+        "resumen": "Se eliminan las materias de Formación Nacional exigidas para convalidar estudios secundarios cursados afuera.",
+        "beneficio": "Puede facilitar la continuidad de los estudios de quienes llegan o regresan a la Argentina.",
+        "antes": "Se exigía aprobar materias de Formación Nacional para la convalidación.",
+        "ahora": "Se elimina esa exigencia y el trámite para los estudios secundarios se unifica en una plataforma.",
+        "personas": "Personas que cursaron el secundario en el exterior y necesitan convalidarlo en el país."
+      },
+      "2": {
+        "titulo": "Alimentos certificados, menos trámites previos",
+        "categoria": "Alimentos y consumo",
+        "icono": "basket",
+        "intereses": [
+          "cotidiana",
+          "producir"
+        ],
+        "resumen": "Se reconocen certificaciones extranjeras y estándares internacionales para los productos alcanzados.",
+        "beneficio": "Podría ampliar la oferta de alimentos.",
+        "antes": "Se requerían la incorporación previa al Código Alimentario y sus procedimientos de registro.",
+        "ahora": "Los productos alcanzados quedan eximidos de esos pasos previos al reconocerse certificaciones y estándares internacionales.",
+        "personas": "Empresas de alimentos, aditivos, ingredientes y envases; potencialmente, sus consumidores."
+      },
+      "3": {
+        "titulo": "Nuevas posibilidades para transportar cargas",
+        "categoria": "Transporte de cargas",
+        "icono": "truck",
+        "intereses": [
+          "transporte",
+          "producir"
+        ],
+        "resumen": "Se actualizan pesos y dimensiones y se admiten nuevas configuraciones de vehículos.",
+        "beneficio": "Puede permitir una logística más eficiente para transportistas y productores.",
+        "antes": "Regían otros límites de pesos y dimensiones para el transporte de cargas y pasajeros.",
+        "ahora": "Se admiten nuevas configuraciones y mayores longitudes para unidades a GNC, eléctricas e híbridas.",
+        "personas": "Transportistas, operadores logísticos y empresas que trasladan mercadería."
+      },
+      "4": {
+        "titulo": "Una deuda ya no impide navegar automáticamente",
+        "categoria": "Navegación",
+        "icono": "ship",
+        "intereses": [
+          "transporte"
+        ],
+        "resumen": "Se elimina la prohibición automática de navegar por falta de pago y se simplifica documentación.",
+        "beneficio": "Puede evitar interrupciones operativas por esa prohibición automática.",
+        "antes": "La ordenanza registral establecía una prohibición automática de navegar por falta de pago.",
+        "ahora": "Se elimina la prohibición automática y se admiten declaraciones juradas en lugar de documentación antes exigida.",
+        "personas": "Titulares y operadores de embarcaciones alcanzados por la disposición."
+      },
+      "5": {
+        "titulo": "Financiar proyectos con menos autorizaciones previas",
+        "categoria": "Financiamiento",
+        "icono": "chart",
+        "intereses": [
+          "invertir",
+          "producir"
+        ],
+        "resumen": "Se amplía la autorización automática de oferta pública para fideicomisos financieros.",
+        "beneficio": "Puede facilitar el acceso al mercado de capitales para los instrumentos alcanzados.",
+        "antes": "Los casos ahora incorporados requerían aprobación previa de la CNV.",
+        "ahora": "Se amplía el régimen de autorización automática para los instrumentos alcanzados.",
+        "personas": "Organizadores de fideicomisos financieros y participantes del mercado de capitales."
+      },
+      "6": {
+        "titulo": "Traer maquinaria usada con un trámite más simple",
+        "categoria": "Producción",
+        "icono": "factory",
+        "intereses": [
+          "producir"
+        ],
+        "resumen": "Se simplifica la importación de líneas de producción usadas y se amplían los casos admitidos.",
+        "beneficio": "Puede dar más alternativas de equipamiento a las empresas que producen en el país.",
+        "antes": "Las consultas requerían intermediación profesional y el régimen contemplaba menos casos.",
+        "ahora": "Se habilitan consultas sin esa intermediación y se amplían los supuestos admitidos para líneas de producción usadas.",
+        "personas": "Empresas y pymes que buscan incorporar líneas de producción usadas del exterior."
+      },
+      "8": {
+        "titulo": "Cambia dónde se hacen algunos trámites del auto",
+        "categoria": "Registro automotor",
+        "icono": "car",
+        "intereses": [
+          "cotidiana"
+        ],
+        "resumen": "Se cierran o unifican 14 oficinas del registro automotor y sus competencias pasan a otras.",
+        "beneficio": "Concentra la gestión en los registros que continúan funcionando.",
+        "antes": "Los trámites se distribuían entre una red que incluía las catorce oficinas suprimidas.",
+        "ahora": "La competencia se concentra en los registros que continúan funcionando.",
+        "personas": "Personas que realizan trámites en los registros afectados por la reorganización."
+      }
+    }
+  }
 }

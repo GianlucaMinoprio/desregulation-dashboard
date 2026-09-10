@@ -1,77 +1,71 @@
-async function load() {
-  const res = await fetch("data/august-2026.json");
-  const data = await res.json();
-  renderKpis(data.totals);
-  renderBars(data.articulos_ultimos_3_meses);
-  renderSectors(data.sectores);
-  renderExamples(data.ejemplos_destacados);
-  document.getElementById("source-quote").textContent = `“${data.source.text}”`;
-}
+(() => {
+  'use strict';
+  const byId = (id) => document.getElementById(id);
+  const fmt = (n) => n.toLocaleString('es-AR');
+  const escapeHtml = (value) => String(value).replace(/[&<>"']/g, (char) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[char]);
+  let downloadUrl;
 
-function fmt(n) {
-  return n.toLocaleString("es-AR");
-}
+  function renderKpis(totals) {
+    const items = [
+      { metric: 'articulos', label: 'Artículos alcanzados', ...totals.articulos_modificados_o_eliminados },
+      { metric: 'normativas', label: 'Normas alcanzadas', ...totals.normas_modificadas_o_eliminadas },
+      { metric: 'normas', label: 'Normas de desregulación', ...totals.normas_desregulacion }
+    ];
+    byId('kpis').innerHTML = items.map(item => `
+      <article class="kpi"><a class="kpi-link" href="#historial" data-history-metric="${item.metric}" aria-label="Ver evolución de ${item.label.toLowerCase()}"><p class="value">${fmt(item.value)}</p><h3>${item.label}</h3><span class="delta" aria-label="${fmt(item.delta_month)} más en el mes">+${fmt(item.delta_month)}</span></a></article>
+    `).join('');
+  }
 
-function renderKpis(t) {
-  const items = [
-    { label: "Normas de desregulación", ...t.normas_desregulacion },
-    { label: "Normas modificadas o eliminadas", ...t.normas_modificadas_o_eliminadas },
-    { label: "Artículos modificados o eliminados", ...t.articulos_modificados_o_eliminados },
-  ];
-  const el = document.getElementById("kpis");
-  el.innerHTML = items.map((k) => `
-    <article class="kpi">
-      <div class="label">${k.label}</div>
-      <div class="value">${fmt(k.value)}</div>
-      <div class="delta">+${fmt(k.delta_month)} este mes</div>
-    </article>
-  `).join("");
-}
+  function renderSectors(sectors) {
+    const sorted = [...sectors].sort((a, b) => b.normas - a.normas);
+    const max = Math.max(...sorted.map((sector) => sector.normas));
+    byId('sectors').innerHTML = sorted.map((sector, index) => `<li class="sector" data-sector="${escapeHtml(sector.name)}" ${index >= 5 && byId('show-sectors').getAttribute('aria-expanded') !== 'true' ? 'hidden' : ''}><span class="sector-rank" aria-hidden="true">${String(index + 1).padStart(2, '0')}</span><div><span class="sector-name">${escapeHtml(sector.name)}</span><div class="sector-track" aria-hidden="true"><div class="sector-fill" style="width:${sector.normas / max * 100}%"></div></div></div><span class="sector-n">${fmt(sector.normas)}<span class="visually-hidden"> normas</span></span></li>`).join('');
+  }
 
-function renderBars(rows) {
-  const max = Math.max(...rows.map((r) => r.value));
-  const el = document.getElementById("bars");
-  el.innerHTML = rows.map((r) => {
-    const pct = Math.max(8, (r.value / max) * 100);
-    const delta = r.delta != null ? `<span class="d">+${fmt(r.delta)}</span>` : "";
-    return `
-      <div class="bar-row">
-        <div class="bar-label">${r.label}</div>
-        <div class="bar-track"><div class="bar-fill" style="width:${pct}%"></div></div>
-        <div class="bar-meta">${fmt(r.value)}${delta}</div>
-      </div>`;
-  }).join("");
-}
+  byId('show-sectors').addEventListener('click', () => {
+    const expanded = byId('show-sectors').getAttribute('aria-expanded') !== 'true';
+    byId('show-sectors').setAttribute('aria-expanded', String(expanded));
+    byId('show-sectors').innerHTML = `${expanded ? 'Ver solo los primeros 5' : 'Ver los 11 sectores'} <span aria-hidden="true">${expanded ? '−' : '+'}</span>`;
+    [...byId('sectors').children].forEach((row, i) => row.hidden = i >= 5 && !expanded);
+  });
 
-function renderSectors(sectors) {
-  const max = Math.max(...sectors.map((s) => s.normas));
-  const el = document.getElementById("sectors");
-  el.innerHTML = sectors.map((s) => {
-    const pct = (s.normas / max) * 100;
-    return `
-      <div class="sector">
-        <div class="sector-name">${s.name}</div>
-        <div class="sector-n">${fmt(s.normas)}</div>
-        <div class="sector-track"><div class="sector-fill" style="width:${pct}%"></div></div>
-      </div>`;
-  }).join("");
-}
+  function setBusy(busy) {
+    ['kpis', 'sectors'].forEach((id) => byId(id).setAttribute('aria-busy', String(busy)));
+  }
 
-function renderExamples(list) {
-  const el = document.getElementById("examples");
-  el.innerHTML = list.map((e) => `
-    <li>
-      <div class="n">${e.n}</div>
-      <div>
-        <div class="norma">${e.norma}</div>
-        <h3>${e.titulo}</h3>
-        <p>${e.detalle}</p>
-      </div>
-    </li>
-  `).join("");
-}
+  async function load({ retry = false } = {}) {
+    const status = byId('load-status');
+    status.hidden = false;
+    status.innerHTML = '<p>Cargando los datos del informe…</p>';
+    setBusy(true);
+    try {
+      const embedded = byId('report-data');
+      let data;
+      if (embedded) data = JSON.parse(embedded.textContent);
+      else {
+        const response = await fetch('data/august-2026.json', { signal: AbortSignal.timeout(10000) });
+        if (!response.ok) throw new Error(`Report request failed: ${response.status}`);
+        data = await response.json();
+      }
+      renderKpis(data.totals);
+      renderSectors(data.sectores);
+      byId('show-sectors').hidden = false;
+      byId('pdf-link').href = data.source.official_pdf;
+      if (downloadUrl) URL.revokeObjectURL(downloadUrl);
+      downloadUrl = URL.createObjectURL(new Blob([JSON.stringify(data, null, 2) + '\n'], { type: 'application/json' }));
+      byId('download-data').href = downloadUrl;
+      status.hidden = true;
+      if (retry) byId('kpis').querySelector('a').focus();
+    } catch (error) {
+      console.error('No se pudo cargar el informe:', error);
+      status.innerHTML = '<p>No pudimos cargar los datos. Revisá tu conexión e intentá de nuevo, o <a href="https://www.argentina.gob.ar/desregulacion/desregulacion-en-numeros">consultá el informe oficial</a>.</p><button type="button" class="button button-navy" id="retry-load">Volver a intentar</button>';
+      byId('retry-load').addEventListener('click', () => load({ retry: true }));
+      if (retry) byId('retry-load').focus();
+    } finally {
+      setBusy(false);
+    }
+  }
 
-load().catch((err) => {
-  console.error(err);
-  document.querySelector(".lede").textContent = "No se pudo cargar data/august-2026.json";
-});
+  window.desregulacionLoads = window.desregulacionLoads || {};
+  window.desregulacionLoads.report = load();
+})();

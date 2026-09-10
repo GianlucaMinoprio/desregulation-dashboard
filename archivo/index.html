@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es-AR" data-asset-base="../" data-page="archive">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#272e50" />
+  <title>Archivo público · Desregulación</title>
+  <link rel="canonical" href="https://desregulacion.com/archivo/" />
+  <meta name="description" content="Buscá normas, informes y comunicados oficiales de desregulación desde diciembre de 2023. Filtrá por tema, año y tipo de documento." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="../assets/favicon.png" />
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#archivo">Saltar al archivo</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="../#inicio" aria-label="Desregulación, inicio"><img class="brand-mark" src="../assets/desregulacion-emblem-web.png" width="52" height="72" alt="" /><span>desregulacion<span class="brand-domain">.com</span></span></a>
+      <nav aria-label="Navegación principal"><a href="../#ejemplos">Qué cambia</a><a href="../#numeros">En números</a><a href="../#participar">Participá</a><a href="./" aria-current="page">Archivo</a></nav>
+    </div>
+  </header>
+  <main id="archive-view">
+    <section class="archive-section container section-space" id="archivo" aria-labelledby="archive-title">
+      <div class="section-heading"><div><p class="eyebrow">Archivo público</p><h1 id="archive-title">Explorá el archivo.</h1></div><p>Publicaciones oficiales desde diciembre de 2023. Buscá por tema, año o tipo de documento.</p></div>
+      <noscript><p class="notice">Para buscar en el archivo, activá JavaScript. También podés <a href="https://www.argentina.gob.ar/desregulacion/desregulacion-en-numeros">consultar los informes oficiales</a>.</p></noscript>
+      <details class="archive-coverage"><summary>Qué incluye este archivo <span aria-hidden="true">+</span></summary><p id="archive-coverage">El historial de cifras comienza en diciembre de 2023. El índice de documentos no es todavía un inventario individual de todas las normas de desregulación.</p></details>
+      <form class="archive-controls" id="archive-controls" role="search" aria-label="Buscar en el archivo" hidden>
+        <div class="archive-search"><label for="archive-search">Buscá un tema o una norma</label><input id="archive-search" type="search" placeholder="Ej.: alquileres, transporte, 70/2023" autocomplete="off" /></div>
+        <div><label for="archive-topic">Tema</label><select id="archive-topic"><option value="todos">Todos los temas</option><option value="cotidiana">Vida cotidiana</option><option value="producir">Producir, vender y emprender</option><option value="transporte">Transportar</option><option value="invertir">Invertir</option></select></div>
+        <div><label for="archive-year">Año</label><select id="archive-year"><option value="todos">Todos los años</option></select></div>
+        <div><label for="archive-kind">Documento</label><select id="archive-kind"><option value="todos">Todos los documentos</option><option value="norma">Normas de referencia</option><option value="medida">Medidas del informe</option><option value="informe">Informes mensuales</option><option value="comunicado">Comunicados oficiales</option></select></div>
+        <div><label for="archive-sort">Orden</label><select id="archive-sort"><option value="recientes">Más recientes primero</option><option value="antiguos">Desde el comienzo</option></select></div>
+      </form>
+      <div class="archive-meta"><p id="archive-count" role="status" aria-live="polite" aria-atomic="true">Cargando documentos…</p><a id="download-archive" href="../data/archive.json" download="desregulacion-archivo.json">Descargar índice · JSON <span aria-hidden="true">↓</span></a></div>
+      <div id="archive-results" tabindex="-1"><ol class="archive-list" id="archive-list"></ol></div>
+      <div class="empty-state" id="archive-empty" hidden><h3>No encontramos documentos con esos filtros</h3><p>Probá otro tema o ampliá el año y el tipo de documento.</p><button type="button" class="button button-navy" id="archive-reset">Limpiar filtros</button></div>
+      <nav class="archive-pagination" aria-label="Páginas del archivo" id="archive-pagination" hidden><button type="button" id="archive-prev" class="button button-outline">← Anterior</button><span id="archive-page"></span><button type="button" id="archive-next" class="button button-outline">Siguiente →</button></nav>
+      <p class="chart-note">Las fechas de las normas son las de publicación en el Boletín Oficial. En los informes se muestra el período de la edición. Los comunicados tienen su fecha de publicación. Un documento puede describir varias medidas; varios documentos pueden tratar la misma norma.</p>
+    </section>
+  </main>
+  <footer class="container footer"><a class="brand" href="../#inicio"><img class="brand-mark" src="../assets/desregulacion-emblem-web.png" width="52" height="72" alt="" /><span>desregulacion<span class="brand-domain">.com</span></span></a><p>Un sitio ciudadano independiente.<br>No es un canal oficial del Gobierno.</p><a href="../#inicio" class="back-top">Volver arriba <span aria-hidden="true">↑</span></a></footer>
+  <script src="../site.js"></script>
+  <script src="../archive.js"></script>
+  <script src="../navigation.js"></script>
+</body>
+</html>

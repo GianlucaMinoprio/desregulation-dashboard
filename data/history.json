@@ -1,0 +1,244 @@
+{
+  "retrieved_at": "2026-09-10",
+  "coverage_start": "2023-12-10",
+  "source_url": "https://www.argentina.gob.ar/desregulacion",
+  "spreadsheet_url": "https://docs.google.com/spreadsheets/d/1bqAJutlK3cdJH9sFX8ht6DAAYdu-iETcHLwrFrT-NiE/edit",
+  "source_sheets": {
+    "normas": "https://docs.google.com/spreadsheets/d/1bqAJutlK3cdJH9sFX8ht6DAAYdu-iETcHLwrFrT-NiE/gviz/tq?tqx=out%3Acsv&sheet=Normas",
+    "normativas": "https://docs.google.com/spreadsheets/d/1bqAJutlK3cdJH9sFX8ht6DAAYdu-iETcHLwrFrT-NiE/gviz/tq?tqx=out%3Acsv&sheet=Normativas",
+    "articulos": "https://docs.google.com/spreadsheets/d/1bqAJutlK3cdJH9sFX8ht6DAAYdu-iETcHLwrFrT-NiE/gviz/tq?tqx=out%3Acsv&sheet=Art%C3%ADculos"
+  },
+  "description": "Serie acumulada publicada en los gráficos del Ministerio. Los valores se conservan tal como los publica la fuente y pueden incorporar revisiones metodológicas.",
+  "months": [
+    {
+      "month": "2023-12",
+      "normas": 4,
+      "normativas": 102,
+      "articulos": 1146
+    },
+    {
+      "month": "2024-01",
+      "normas": 9,
+      "normativas": 167,
+      "articulos": 1551
+    },
+    {
+      "month": "2024-02",
+      "normas": 14,
+      "normativas": 179,
+      "articulos": 1656
+    },
+    {
+      "month": "2024-03",
+      "normas": 17,
+      "normativas": 179,
+      "articulos": 1656
+    },
+    {
+      "month": "2024-04",
+      "normas": 26,
+      "normativas": 269,
+      "articulos": 1970
+    },
+    {
+      "month": "2024-05",
+      "normas": 30,
+      "normativas": 272,
+      "articulos": 1999
+    },
+    {
+      "month": "2024-06",
+      "normas": 35,
+      "normativas": 285,
+      "articulos": 2145
+    },
+    {
+      "month": "2024-07",
+      "normas": 49,
+      "normativas": 311,
+      "articulos": 2433
+    },
+    {
+      "month": "2024-08",
+      "normas": 74,
+      "normativas": 356,
+      "articulos": 2635
+    },
+    {
+      "month": "2024-09",
+      "normas": 99,
+      "normativas": 396,
+      "articulos": 3078
+    },
+    {
+      "month": "2024-10",
+      "normas": 123,
+      "normativas": 418,
+      "articulos": 3223
+    },
+    {
+      "month": "2024-11",
+      "normas": 150,
+      "normativas": 523,
+      "articulos": 3872
+    },
+    {
+      "month": "2024-12",
+      "normas": 185,
+      "normativas": 558,
+      "articulos": 4074
+    },
+    {
+      "month": "2025-01",
+      "normas": 210,
+      "normativas": 612,
+      "articulos": 4522
+    },
+    {
+      "month": "2025-02",
+      "normas": 239,
+      "normativas": 693,
+      "articulos": 5080
+    },
+    {
+      "month": "2025-03",
+      "normas": 260,
+      "normativas": 789,
+      "articulos": 5541
+    },
+    {
+      "month": "2025-04",
+      "normas": 281,
+      "normativas": 837,
+      "articulos": 5740
+    },
+    {
+      "month": "2025-05",
+      "normas": 309,
+      "normativas": 972,
+      "articulos": 6426
+    },
+    {
+      "month": "2025-06",
+      "normas": 345,
+      "normativas": 1051,
+      "articulos": 6956
+    },
+    {
+      "month": "2025-07",
+      "normas": 396,
+      "normativas": 1157,
+      "articulos": 8090
+    },
+    {
+      "month": "2025-08",
+      "normas": 418,
+      "normativas": 1246,
+      "articulos": 8935
+    },
+    {
+      "month": "2025-09",
+      "normas": 437,
+      "normativas": 1306,
+      "articulos": 9612
+    },
+    {
+      "month": "2025-10",
+      "normas": 451,
+      "normativas": 2104,
+      "articulos": 12357
+    },
+    {
+      "month": "2025-11",
+      "normas": 463,
+      "normativas": 2335,
+      "articulos": 13474
+    },
+    {
+      "month": "2025-12",
+      "normas": 494,
+      "normativas": 2418,
+      "articulos": 14392
+    },
+    {
+      "month": "2026-01",
+      "normas": 495,
+      "normativas": 2418,
+      "articulos": 14392
+    },
+    {
+      "month": "2026-02",
+      "normas": 512,
+      "normativas": 2443,
+      "articulos": 14572
+    },
+    {
+      "month": "2026-03",
+      "normas": 543,
+      "normativas": 2519,
+      "articulos": 15144
+    },
+    {
+      "month": "2026-04",
+      "normas": 584,
+      "normativas": 2545,
+      "articulos": 15251
+    },
+    {
+      "month": "2026-05",
+      "normas": 636,
+      "normativas": 2589,
+      "articulos": 15507
+    },
+    {
+      "month": "2026-06",
+      "normas": 689,
+      "normativas": 2699,
+      "articulos": 16178
+    },
+    {
+      "month": "2026-07",
+      "normas": 719,
+      "normativas": 2803,
+      "articulos": 16771
+    },
+    {
+      "month": "2026-08",
+      "normas": 770,
+      "normativas": 2841,
+      "articulos": 17115
+    }
+  ],
+  "reconciliation": [
+    {
+      "metric": "normas",
+      "month": "2026-07",
+      "series_previous": 719,
+      "series_delta": 51,
+      "report_delta": 36,
+      "report_previous": null,
+      "report_url": "https://www.argentina.gob.ar/sites/default/files/2025/06/informe_analisis_de_la_desregulacion_implementada_agosto.pdf",
+      "status": "unreconciled"
+    },
+    {
+      "metric": "normativas",
+      "month": "2026-07",
+      "series_previous": 2803,
+      "series_delta": 38,
+      "report_delta": 32,
+      "report_previous": null,
+      "report_url": "https://www.argentina.gob.ar/sites/default/files/2025/06/informe_analisis_de_la_desregulacion_implementada_agosto.pdf",
+      "status": "unreconciled"
+    },
+    {
+      "metric": "articulos",
+      "month": "2026-07",
+      "series_previous": 16771,
+      "series_delta": 344,
+      "report_delta": 267,
+      "report_previous": 16848,
+      "report_url": "https://www.argentina.gob.ar/sites/default/files/2025/06/informe_analisis_de_la_desregulacion_implementada_agosto.pdf",
+      "status": "unreconciled"
+    }
+  ]
+}
