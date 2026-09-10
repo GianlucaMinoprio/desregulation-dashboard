@@ -503,12 +503,10 @@ th:first-child { text-align: left; }
 .ai-provider-tooltip::after { content: ''; position: absolute; top: 100%; left: 0; width: 100%; height: 11px; }
 .ai-provider-choice:not([data-tooltip-dismissed]):focus-within .ai-provider-tooltip { opacity: 1; visibility: visible; }
 .ai-helper-content .ai-copy-status { margin-top: 12px; font-weight: 600; }
-.ai-helper-content .ai-handoff-note { font-size: 12px; margin-top: 14px; color: var(--muted); }
 .ai-prompt-actions { margin-top: 12px; border-top: 1px solid var(--line); }
 .ai-copy-button { min-height: 44px; background: none; border: 0; padding: 8px 0; font: inherit; font-size: 13px; color: var(--navy); text-decoration: underline; text-underline-offset: 3px; }
-.ai-prompt-preview > summary { min-height: 44px; padding: 8px 0; font-size: 13px; }
-.ai-prompt-preview label { display: block; margin: 6px 0 8px; font-size: 12px; }
-.ai-prompt-preview textarea { display: block; width: 100%; max-width: 100%; min-height: 180px; padding: 12px; border: 1px solid var(--muted); border-radius: 3px; background: var(--white); color: var(--navy); font: inherit; font-size: 16px; line-height: 1.5; resize: vertical; }
+.ai-manual-copy label { display: block; margin: 6px 0 8px; font-size: 12px; }
+.ai-manual-copy textarea { display: block; width: 100%; max-width: 100%; min-height: 180px; padding: 12px; border: 1px solid var(--muted); border-radius: 3px; background: var(--white); color: var(--navy); font: inherit; font-size: 16px; line-height: 1.5; resize: vertical; }
 @media (hover: hover) and (pointer: fine) {
   .ai-provider:hover { background: var(--navy); color: var(--white); text-decoration: none; }
   .ai-provider:hover .ai-provider-logo { color: var(--gold); }
@@ -1115,9 +1113,9 @@ nav a[aria-current="page"] { text-decoration: underline; text-decoration-color: 
   });
 
   function showManualCopy(helper) {
-    const preview = helper.querySelector('.ai-prompt-preview');
-    preview.open = true;
-    const field = preview.querySelector('textarea');
+    const fallback = helper.querySelector('.ai-manual-copy');
+    fallback.hidden = false;
+    const field = fallback.querySelector('textarea');
     field.focus({ preventScroll: true });
     field.select();
   }
@@ -1127,6 +1125,7 @@ nav a[aria-current="page"] { text-decoration: underline; text-decoration-color: 
     try {
       if (!navigator.clipboard?.writeText) throw new Error('Clipboard unavailable');
       await navigator.clipboard.writeText(prompt);
+      helper.querySelector('.ai-manual-copy').hidden = true;
       status.textContent = 'Prompt copiado. Pegalo en tu IA para empezar.';
     } catch {
       showManualCopy(helper);
@@ -1156,11 +1155,9 @@ nav a[aria-current="page"] { text-decoration: underline; text-decoration-color: 
       }).join('');
       content.innerHTML = `<p>Contale tu problema. La IA te ayudará a preparar ${channel === 'igj' ? 'el documento para adjuntar a la consulta' : 'las respuestas del formulario'} y usará su memoria si está habilitada.</p>
         <div class="ai-providers" role="group" aria-label="Elegí una IA para ${channel === 'igj' ? 'la consulta de la IGJ' : 'reportar una norma'}">${links}</div>
-        <p class="ai-copy-status" role="status" aria-live="polite" hidden></p>
-        <p class="ai-handoff-note">Si el mensaje no aparece al abrir tu IA, copialo y pegalo para empezar.</p>
         <div class="ai-prompt-actions"><button class="ai-copy-button" type="button" data-ai-copy>Copiar prompt</button>
-        <details class="ai-prompt-preview"><summary>Ver el prompt <span aria-hidden="true">+</span></summary><label for="ai-prompt-${channel}">Mensaje para iniciar la conversación</label><textarea id="ai-prompt-${channel}" rows="8" readonly spellcheck="false" autocomplete="off">${escapeHtml(prompt)}</textarea></details></div>
-        <p class="ai-handoff-note">Revisá el borrador antes de presentarlo en el formulario oficial.</p>`;
+        <p class="ai-copy-status" id="ai-copy-status-${channel}" role="status" aria-live="polite" hidden></p>
+        <div class="ai-manual-copy" hidden><label for="ai-prompt-${channel}">Copiá este mensaje y pegalo en tu IA</label><textarea id="ai-prompt-${channel}" aria-describedby="ai-copy-status-${channel}" rows="8" readonly spellcheck="false" autocomplete="off">${escapeHtml(prompt)}</textarea></div></div>`;
       content.querySelector('[data-ai-copy]').addEventListener('click', () => copyPrompt(helper, prompt));
       const choice = content.querySelector('.ai-provider-choice');
       const resetTooltip = () => {

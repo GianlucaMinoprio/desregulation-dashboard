@@ -46,9 +46,9 @@
   });
 
   function showManualCopy(helper) {
-    const preview = helper.querySelector('.ai-prompt-preview');
-    preview.open = true;
-    const field = preview.querySelector('textarea');
+    const fallback = helper.querySelector('.ai-manual-copy');
+    fallback.hidden = false;
+    const field = fallback.querySelector('textarea');
     field.focus({ preventScroll: true });
     field.select();
   }
@@ -58,6 +58,7 @@
     try {
       if (!navigator.clipboard?.writeText) throw new Error('Clipboard unavailable');
       await navigator.clipboard.writeText(prompt);
+      helper.querySelector('.ai-manual-copy').hidden = true;
       status.textContent = 'Prompt copiado. Pegalo en tu IA para empezar.';
     } catch {
       showManualCopy(helper);
@@ -87,11 +88,9 @@
       }).join('');
       content.innerHTML = `<p>Contale tu problema. La IA te ayudará a preparar ${channel === 'igj' ? 'el documento para adjuntar a la consulta' : 'las respuestas del formulario'} y usará su memoria si está habilitada.</p>
         <div class="ai-providers" role="group" aria-label="Elegí una IA para ${channel === 'igj' ? 'la consulta de la IGJ' : 'reportar una norma'}">${links}</div>
-        <p class="ai-copy-status" role="status" aria-live="polite" hidden></p>
-        <p class="ai-handoff-note">Si el mensaje no aparece al abrir tu IA, copialo y pegalo para empezar.</p>
         <div class="ai-prompt-actions"><button class="ai-copy-button" type="button" data-ai-copy>Copiar prompt</button>
-        <details class="ai-prompt-preview"><summary>Ver el prompt <span aria-hidden="true">+</span></summary><label for="ai-prompt-${channel}">Mensaje para iniciar la conversación</label><textarea id="ai-prompt-${channel}" rows="8" readonly spellcheck="false" autocomplete="off">${escapeHtml(prompt)}</textarea></details></div>
-        <p class="ai-handoff-note">Revisá el borrador antes de presentarlo en el formulario oficial.</p>`;
+        <p class="ai-copy-status" id="ai-copy-status-${channel}" role="status" aria-live="polite" hidden></p>
+        <div class="ai-manual-copy" hidden><label for="ai-prompt-${channel}">Copiá este mensaje y pegalo en tu IA</label><textarea id="ai-prompt-${channel}" aria-describedby="ai-copy-status-${channel}" rows="8" readonly spellcheck="false" autocomplete="off">${escapeHtml(prompt)}</textarea></div></div>`;
       content.querySelector('[data-ai-copy]').addEventListener('click', () => copyPrompt(helper, prompt));
       const choice = content.querySelector('.ai-provider-choice');
       const resetTooltip = () => {
