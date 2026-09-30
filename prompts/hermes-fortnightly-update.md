@@ -25,6 +25,7 @@ Consultá las fuentes oficiales actuales, siguiendo los enlaces publicados allí
 - Series de los gráficos y su planilla pública: https://www.argentina.gob.ar/desregulacion
 - Publicaciones del ministerio: https://www.argentina.gob.ar/desregulacion/noticias
 - Consulta pública de la IGJ: https://www.argentina.gob.ar/justicia/igj/consulta-publica
+- Plazo de la consulta, publicado en la portada de la IGJ: https://www.argentina.gob.ar/justicia/igj
 - Formulario general: https://www.argentina.gob.ar/formularios/reportar-normativa
 - Para leyes, decretos y resoluciones: seguí sus referencias al Boletín Oficial, normativa oficial y expedientes de Diputados o Senado.
 
@@ -65,7 +66,7 @@ Si una fuente se publica antes que otra, mantené cada conjunto fechado correcta
 
 ### Participación y ayuda con IA
 
-- Revisá el estado real de las iniciativas, formularios, plazos y próximos pasos. La consulta IGJ tenía como fecha límite registrada el **28 de septiembre de 2026**: comprobá prórrogas o cierre, no la dejes anunciada como abierta después del plazo sin respaldo oficial.
+- Revisá el estado real de las iniciativas, formularios, plazos y próximos pasos. Al 30 de septiembre de 2026, la portada de la IGJ anuncia la consulta abierta hasta el **28 de octubre de 2026**: comprobá prórrogas o cierre, no la dejes anunciada como abierta después del plazo sin respaldo oficial. Revisá también los cambios ya publicados antes de mantener instrucciones para proponerlos; guardá su fecha y fuente en `latest_update` cuando ayuden a preparar los aportes.
 - Si una consulta cerró, actualizá su estado y acciones tanto en los datos como en el HTML de respaldo. No sigas invitando a enviar por un canal cerrado. Conservá el enlace a la convocatoria y cualquier resultado publicado. El formulario general permanece disponible si sigue vigente.
 - Avanzá `reviewed_at` solo después de revisar efectivamente el contenido correspondiente.
 - Si cambian los formularios, inspeccioná sus campos, opciones, condiciones, límites y adjuntos. Actualizá `prompts/participacion.md` y `docs/participation-forms.md`, y regenerá los mensajes. El asistente siempre empieza por el problema de la persona y usa memoria relevante si está disponible, confirmando lo que incluya.

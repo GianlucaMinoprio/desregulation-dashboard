@@ -2,6 +2,8 @@
 
 Reviewed September 10, 2026.
 
+Grok retested September 30, 2026 in signed-in Safari with the site's general regulation-report prompt. The existing `https://grok.com/?q=…` link opens a **“Send this message?”** preview with the prompt prefilled. Grok requires the visitor to press Send; the test stopped at that preview. No provider-link code change was needed, and no AI conversation was submitted. This is observed consumer-web behavior, not a versioned deep-link guarantee. ChatGPT and Claude were not retested in this review.
+
 ## Link formats
 
 These are provider-specific web conventions, not a shared, versioned deep-link standard. The website uses HTTPS links to reach the browser experience without requiring an installed application. `URLSearchParams` encodes the complete prompt; the link includes no visitor data, model override, automatic-send flag, or memory-setting override.

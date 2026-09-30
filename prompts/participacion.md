@@ -51,11 +51,14 @@ Antes de darlo por listo, comprobá que el título, la norma y la solución se r
 
 Quiero preparar un aporte para la consulta pública de la Inspección General de Justicia. Revisá primero la convocatoria y el plazo vigente:
 https://www.argentina.gob.ar/justicia/igj/consulta-publica
+El plazo se anuncia en la página principal del organismo:
+https://www.argentina.gob.ar/justicia/igj
 
 El formulario observado corresponde a modificaciones de la RG IGJ 15/2024:
 https://www.argentina.gob.ar/formularios/consulta-publica-modificacion-de-la-rg-igj-152024
 
-Confirmá que el caso corresponde a esa resolución y a la IGJ. La convocatoria revisada el 10 de septiembre de 2026 extendió el plazo al 28 de septiembre de 2026: verificá su estado antes de recomendar el envío. Si cerró o cambió, buscá el canal vigente.
+Confirmá que el caso corresponde a esa resolución y a la IGJ. Al 30 de septiembre de 2026, la IGJ anuncia la consulta abierta hasta el 28 de octubre de 2026: verificá su estado antes de recomendar el envío. Si cerró o cambió, buscá el canal vigente. Comprobá también las modificaciones posteriores de la norma: la Resolución General 11/2026, publicada el 22 de septiembre, ya simplificó la constitución de sociedades y flexibilizó el objeto social. No propongas eliminar una exigencia que ya fue derogada. Fuente oficial:
+https://www.argentina.gob.ar/noticias/igj-simplifica-el-regimen-de-constitucion-de-sociedades-y-flexibiliza-el-objeto-social
 
 El formulario requiere estos cinco elementos; no tiene un campo de texto para desarrollar la propuesta. Las opciones revisadas no habilitan preguntas adicionales.
 
@@ -84,7 +87,7 @@ Generá un PDF o DOCX si tenés esa capacidad; si no, entregá el texto completo
 - «Prepará tu propuesta con IA» está disponible en la consulta de la IGJ y en «Reportá una traba», además del acceso directo a cada formulario.
 - Cada proveedor recibe el mismo prompt común y el canal seleccionado. La personalización ocurre en la conversación del visitante con su asistente, no en la URL del sitio.
 - Los enlaces de ChatGPT, Claude y Grok incluyen el mensaje completo mediante sus rutas web con `q`; Grok usa `grok.com`, en lugar de la ruta anterior dentro de X. La revisión de los formatos y las fuentes está en [docs/ai-links.md](../docs/ai-links.md). La integración no depende de que la IA pueda visitar desregulacion.com. No fija un modelo ni modifica la configuración de memoria de la cuenta.
-- Ambos canales ofrecen «Copiar prompt» y «Ver el prompt», por si un proveedor no conserva el texto al iniciar sesión. Los tres botones incluyen su logo y cambian de color con la paleta del sitio al pasar el cursor o usar el teclado.
+- Ambos canales ofrecen «Copiar prompt», por si un proveedor no conserva el texto al iniciar sesión. Los tres botones incluyen su logo y cambian de color con la paleta del sitio al pasar el cursor o usar el teclado.
 - Si el navegador no permite copiar automáticamente, se muestra el texto seleccionable. El export portátil incluye ambos mensajes y los controles de copia; abrir una IA externa requiere conexión.
 - El generador `scripts/build_prompts.py` produce `data/participation-prompts.json` a partir de las tres secciones anteriores. Se carga al abrir el primer asistente y queda disponible para ambos canales.
 - El relevamiento de campos obligatorios, opciones, límites y preguntas condicionales está en [docs/participation-forms.md](../docs/participation-forms.md). Se probaron ambas respuestas de representación, los tres niveles de jurisdicción, los once tipos de norma y ambas alternativas de cambio; en IGJ, los ocho caracteres de presentación y las tres temáticas.

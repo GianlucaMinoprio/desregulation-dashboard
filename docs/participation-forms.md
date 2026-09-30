@@ -39,7 +39,7 @@ Verification exercised both organization answers, all three jurisdictions, all e
 
 [Official form](https://www.argentina.gob.ar/formularios/consulta-publica-modificacion-de-la-rg-igj-152024) · [Official call and deadline](https://www.argentina.gob.ar/justicia/igj/consulta-publica).
 
-The call concerns Resolución General IGJ 15/2024, with a recorded extension to September 28, 2026. The prompt instructs the assistant to recheck the active call and deadline before recommending submission.
+The call concerns Resolución General IGJ 15/2024. Rechecked September 30, 2026: the [IGJ homepage](https://www.argentina.gob.ar/justicia/igj) explicitly announces the consultation open until **October 28, 2026**, replacing the September 28 deadline previously recorded here. The prompt instructs the assistant to recheck the active call and deadline before recommending submission. It also points to the [September 22 changes under Resolución General 11/2026](https://www.argentina.gob.ar/noticias/igj-simplifica-el-regimen-de-constitucion-de-sociedades-y-flexibiliza-el-objeto-social), so proposals account for requirements already simplified or removed. The September 30 review confirmed the published field labels and upload requirements; the detailed conditional-field checks below remain from September 10.
 
 | Field | Requirement and observed constraint |
 | --- | --- |

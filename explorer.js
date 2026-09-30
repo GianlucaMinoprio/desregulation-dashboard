@@ -134,10 +134,11 @@
     return `<details class="proposal-details"><summary>${consultation ? 'Requisitos de la consulta' : 'Cómo participar'} <span aria-hidden="true">+</span></summary>
       <p class="proposal-reference">${escapeHtml(entry.reference)}</p>
       <p class="proposal-context">${escapeHtml(entry.description)}</p>
+      ${entry.latest_update ? `<div class="proposal-next"><h4>Última novedad · <time datetime="${escapeHtml(entry.latest_update.date)}">${escapeHtml(new Intl.DateTimeFormat('es-AR', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }).format(new Date(`${entry.latest_update.date}T12:00:00Z`)))}</time></h4><p>${escapeHtml(entry.latest_update.text)}</p><a class="report-link" href="${escapeHtml(entry.latest_update.source_url)}" target="_blank" rel="noopener">Ver los cambios publicados <span aria-hidden="true">↗</span><span class="visually-hidden">(nueva pestaña)</span></a></div>` : ''}
       <div class="proposal-next"><h4>${consultation ? 'Cómo se evalúa' : 'El próximo paso'}</h4><p>${escapeHtml(entry.next_step)}</p></div>
       <div class="proposal-support"><h4>${consultation ? 'Prepará tu aporte' : 'Cómo podés acompañar'}</h4><p>${escapeHtml(entry.support)}</p></div>
       <div class="proposal-actions">${consultation ? '' : `<a class="button button-navy" href="${escapeHtml(entry.action_url)}" target="_blank" rel="noopener">${escapeHtml(entry.action_label)} <span aria-hidden="true">↗</span><span class="visually-hidden">(nueva pestaña)</span></a>`}
-      <a class="report-link" href="${escapeHtml(entry.source_url)}" target="_blank" rel="noopener">${escapeHtml(entry.source_label)} <span aria-hidden="true">↗</span><span class="visually-hidden">(nueva pestaña)</span></a></div>
+      <a class="report-link" href="${escapeHtml(entry.source_url)}" target="_blank" rel="noopener">${escapeHtml(entry.source_label)} <span aria-hidden="true">↗</span><span class="visually-hidden">(nueva pestaña)</span></a>${entry.deadline_source_url ? `<a class="report-link" href="${escapeHtml(entry.deadline_source_url)}" target="_blank" rel="noopener">Ver el plazo oficial <span aria-hidden="true">↗</span><span class="visually-hidden">(nueva pestaña)</span></a>` : ''}</div>
     </details>`;
   }
 

@@ -1,5 +1,5 @@
 {
-  "reviewed_at": "2026-09-10",
+  "reviewed_at": "2026-09-30",
   "entries": [
     {
       "id": "hojarasca",
@@ -9,7 +9,7 @@
       "status_kind": "legislativo",
       "reference": "CD-1/26 · Orden del Día 135/26",
       "description": "Propone derogar legislación considerada obsoleta. Diputados dio media sanción el 20 de mayo; el Senado registra dictámenes y mantiene la orden del día pendiente.",
-      "next_step": "Tratamiento en el Senado. El último movimiento de comisión registrado es del 26 de agosto de 2026.",
+      "next_step": "Tratamiento en el Senado. Al 30 de septiembre de 2026, el expediente mantiene la orden del día pendiente; el último movimiento de comisión registrado es del 26 de agosto.",
       "support": "Leé el articulado y, si lo acompañás, escribí por los canales oficiales a tus senadores. Explicá qué norma te afecta, aportá un ejemplo concreto y pedí su tratamiento.",
       "source_url": "https://www.senado.gob.ar/parlamentario/comisiones/verExp/1.26/CD/PL",
       "source_label": "Ver expediente y texto",
@@ -30,7 +30,13 @@
       "source_label": "Leer la convocatoria",
       "action_url": "https://www.argentina.gob.ar/formularios/consulta-publica-modificacion-de-la-rg-igj-152024",
       "action_label": "Abrir formulario",
-      "deadline": "2026-09-28"
+      "deadline": "2026-10-28",
+      "deadline_source_url": "https://www.argentina.gob.ar/justicia/igj",
+      "latest_update": {
+        "date": "2026-09-22",
+        "text": "La Resolución General 11/2026 ya simplificó la constitución de sociedades y amplió las actividades que pueden incluir en su objeto social. Revisá estos cambios antes de preparar tu aporte.",
+        "source_url": "https://www.argentina.gob.ar/noticias/igj-simplifica-el-regimen-de-constitucion-de-sociedades-y-flexibiliza-el-objeto-social"
+      }
     }
   ]
 }

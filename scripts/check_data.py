@@ -76,8 +76,14 @@ for proposal in upcoming['entries']:
     assert proposal['status_kind'] in {'legislativo', 'consulta'}
     if 'deadline' in proposal:
         date.fromisoformat(proposal['deadline'])
+    if 'latest_update' in proposal:
+        update = proposal['latest_update']
+        assert date.fromisoformat(update['date']) <= date.fromisoformat(upcoming['reviewed_at'])
+        assert update['text'].strip()
+        parsed = urlparse(update['source_url'])
+        assert parsed.scheme == 'https' and parsed.hostname == 'www.argentina.gob.ar'
     assert all(proposal.get(key, '').strip() for key in ['title','status','reference','description','next_step','support'])
-    for key in ['source_url', 'action_url']:
+    for key in ['source_url', 'action_url'] + (['deadline_source_url'] if 'deadline_source_url' in proposal else []):
         parsed = urlparse(proposal[key])
         assert parsed.scheme == 'https' and parsed.hostname in {'www.argentina.gob.ar', 'www.senado.gob.ar', 'www.hcdn.gob.ar'}
 assert date.fromisoformat(upcoming['reviewed_at']) <= date.today()
